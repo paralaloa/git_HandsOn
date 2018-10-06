@@ -2,13 +2,13 @@
 seq=$1
 seq=$(echo $seq | tr a-z A-Z)  # Note we just added this line
 if [[ $seq =~ ^[ACGTU]+$ ]]; then
-  if [[ $seq =~ T ]]; then
+  if [[ $seq =~ T ]]; then #If the input includes a T then it's dna
     echo "The sequence is DNA"
-  elif [[ $seq =~ U ]]; then
+  elif [[ $seq =~ U ]]; then #If the input includes a U then is rna
     echo "The sequence is RNA"
   else
-    echo "The sequence can be DNA or RNA"
+    echo "The sequence can be DNA or RNA" 
   fi
 else
-  echo "The snake is not DNA nor RNA"
+  echo "The sequence is not DNA nor RNA"
 fi
